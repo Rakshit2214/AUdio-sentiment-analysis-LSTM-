@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rakshit NTCC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <img src="https://inmoment.com/wp-content/uploads/2021/05/Depositphotos_102903656_m-2015-e1491932782566.jpg ">
+    <br>
+    <form action="analyze" method="post">
+        {% for message in get_flashed_messages() %}
+             <p>{{ message }}</p>
+         {% endfor %}
+        <br>
+        <input type="submit" value="analyze" id="analyze">
+        <br>
+
+    </form>
+    {% if transcript!="" %}
+    <div id="SpeechTranscriptContainer">
+        <h1>Result</h1>
+        <p>{{transcript}}</p>
+
+    </div>
+    {% endif %}
+</body>
+</html>
