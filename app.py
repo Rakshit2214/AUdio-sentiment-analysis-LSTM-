@@ -13,7 +13,7 @@ import pickle
 import warnings
 app = Flask(__name__)
 app.secret_key = "Rakshit_app2214"
-model = load_model("senti_model.h5")
+
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
